@@ -1,0 +1,29 @@
+@use "../abstracts/mixins" as mix;
+
+.attribution {
+  margin-top: 40px;
+  font-size: 11px;
+  text-align: center;
+  @include mix.media("desktop") {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: unset;
+    height: 50px;
+  }
+
+  a {
+    display: inline-block;
+    color: hsl(228, 45%, 44%);
+    margin-left: 5px;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

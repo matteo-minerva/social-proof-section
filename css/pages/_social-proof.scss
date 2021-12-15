@@ -1,0 +1,30 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+#social-proof {
+  background-image: url("../../../images/bg-pattern-top-mobile.svg"), url("../../../images/bg-pattern-bottom-mobile.svg");
+  background-position: top left, bottom right;
+  background-repeat: no-repeat, no-repeat;
+  padding-top: 80px;
+  @include mix.media("desktop") {
+    background-image: url("../../../images/bg-pattern-top-desktop.svg"), url("../../../images/bg-pattern-bottom-desktop.svg");
+    padding-top: 128px;
+    min-height: 100vh;
+  }
+
+  .container {
+    margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    @include mix.media("desktop") {
+      max-width: 1111px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      min-height: calc(100vh - 128px);
+    }
+  }
+}

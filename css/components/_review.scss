@@ -1,0 +1,69 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.review {
+  margin-top: 35px;
+  @include mix.media("desktop") {
+    width: 100%;
+    margin-top: 75px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__container {
+    border-radius: 10px;
+    background-color: var.$very-dark-magenta;
+    color: var.$white;
+    margin-top: 15px;
+    padding: 40px 32px 35px 32px;
+    @include mix.media("desktop") {
+      height: fit-content;
+      margin-top: unset;
+      max-width: calc(33.3% - 10px);
+
+      &:nth-child(2) {
+        margin-top: 17px;
+      }
+
+      &:nth-child(3) {
+        margin-top: 34px;
+      }
+    }
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+
+    .author__image {
+      width: 40px;
+      height: auto;
+
+      img {
+        border-radius: 999px;
+      }
+    }
+
+    .author__name {
+      padding-left: 23px;
+    }
+
+    .author__actual-name {
+      font-weight: 700;
+    }
+
+    .author__tag {
+      line-height: 1.5;
+      font-size: 13px;
+      font-weight: 500;
+      color: var.$dark-grayish-magenta;
+    }
+  }
+
+  &__desc {
+    font-size: 12.5px;
+    padding-top: 30px;
+    font-weight: 400;
+    line-height: 1.7;
+  }
+}

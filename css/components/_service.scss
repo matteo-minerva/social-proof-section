@@ -1,0 +1,37 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.service {
+  margin-left: -1px;
+  margin-right: -10px;
+  @include mix.media("desktop") {
+    width: 50%;
+  }
+
+  &__heading {
+    font-size: 30px;
+    color: var.$very-dark-magenta;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1;
+    @include mix.media("desktop") {
+      max-width: 370px;
+      text-align: left;
+      font-size: 40px;
+    }
+  }
+
+  &__description {
+    margin-top: 25px;
+    text-align: center;
+    color: var.$dark-grayish-magenta;
+    font-weight: 500;
+    line-height: 1.5;
+    @include mix.media("desktop") {
+      max-width: 480px;
+      margin-top: 12px;
+      text-align: left;
+      line-height: 1.7;
+    }
+  }
+}
